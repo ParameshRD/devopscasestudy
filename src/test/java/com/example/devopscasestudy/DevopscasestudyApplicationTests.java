@@ -40,7 +40,7 @@ List<Product> products = new ArrayList<>();
 products.add(new Product());
 products.add(new Product());
 products.add(new Product());
-products.add(new Product());
+
 
 
 when(productRepository.findAll()).thenReturn(products);
@@ -49,7 +49,7 @@ when(productRepository.findAll()).thenReturn(products);
 List<Product> result = productapi.findAll().getBody();
 
 // then
-assertThat(result.size()).isEqualTo(4);
+assertThat(result.size()).isEqualTo(3);
 
 // assertThat(result.get(0).getFirstName())
 // .isEqualTo(employee1.getFirstName());
