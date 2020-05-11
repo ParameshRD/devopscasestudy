@@ -2,6 +2,8 @@ package com.example.devopscasestudy.api;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +20,14 @@ import com.example.devopscasestudy.repo.ProductRepository;
 
 @RestController   //exposes to restapi
 public class ProductApi {
-	
+	private final Logger logger = LoggerFactory.getLogger(getClass());
 	@Autowired  //dependency injection no need to create object container will create
 	private ProductRepository productRepository;
 	
 	
 	@GetMapping("/products")
 	public ResponseEntity<List<Product>> findAll(){
+		logger.info("find by all");
 		List<Product> products=productRepository.findAll();
 		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);  
 	}
