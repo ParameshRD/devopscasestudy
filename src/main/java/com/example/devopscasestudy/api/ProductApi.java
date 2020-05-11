@@ -29,25 +29,25 @@ public class ProductApi {
 	public ResponseEntity<List<Product>> findAll(){
 		logger.info("find by all");
 		List<Product> products=productRepository.findAll();
-		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);  
+		return new ResponseEntity<>(products,HttpStatus.OK);  
 	}
 	
 	@PostMapping("/products")
 	public ResponseEntity<Product> save(@RequestBody Product product){
 		productRepository.save(product);
-		return new ResponseEntity<Product>(product,HttpStatus.CREATED);  
+		return new ResponseEntity<>(product,HttpStatus.CREATED);  
 	}
 	
 	@GetMapping("/products/{price}")
 	public ResponseEntity<List<Product>> findByPrice(@PathVariable("price") double price){
 		List<Product> products=productRepository.findByPriceGreaterThan(price);
-		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);  
+		return new ResponseEntity<>(products,HttpStatus.OK);  
 	}
 	
 	@GetMapping("/products/find/{name}")
 	public ResponseEntity<List<Product>> findByName(@PathVariable("name") String name){
 		List<Product> products=productRepository.findByProductNameIgnoreCase(name);
-		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);  
+		return new ResponseEntity<>(products,HttpStatus.OK);  
 	}
 	
 	@DeleteMapping("/products/{id}")
@@ -60,18 +60,10 @@ public class ProductApi {
 	@PostMapping("/products/bulk")
 	public ResponseEntity<List<Product>> saveAll(@RequestBody List <Product> product){
 		productRepository.saveAll(product);
-		return new ResponseEntity<List<Product>>(product,HttpStatus.CREATED);
+		return new ResponseEntity<>(product,HttpStatus.CREATED);
 	}
 	
-	
-	
-/*	@PutMapping("products/{id}")
-	public ResponseEntity<List<Product>> update(@PathVariable("id")int productId) {
 
-	List<Product> products=productRepository.insertByID(productId);
-	return new ResponseEntity<List<Product>>(HttpStatus.OK);
-
-	}*/
 	
 	
 	

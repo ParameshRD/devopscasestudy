@@ -11,7 +11,7 @@ import com.example.devopscasestudy.model.Product;
 @Repository
 public interface ProductRepository  extends JpaRepository<Product,Integer>{
 	List<Product> findByPriceGreaterThan(double price);
-	//List<Product> insertByID(int productId);
+	
 	
 	List<Product> findByProductNameIgnoreCase(String ProductName);
 
