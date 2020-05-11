@@ -61,4 +61,5 @@ public class ProductApi {
 		productRepository.saveAll(product);
 		return new ResponseEntity<>(product,HttpStatus.CREATED);
 	}
+}
 
