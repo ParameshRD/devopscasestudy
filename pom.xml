@@ -9,12 +9,18 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 <relativePath/> <!-- lookup parent from repository -->
 </parent>
 <groupId>com.example</groupId>
+<<<<<<< HEAD
 <artifactId>devopscasestudy</artifactId>
 <<<<<<< HEAD
 <version>0.2.0-SNAPSHOT</version>
 =======
 <version>0.3.0-SNAPSHOT</version>
 >>>>>>> newrelease
+=======
+
+<version>0.3.0-SNAPSHOT</version>
+
+>>>>>>> 12460da77ecc29bb89c66355d2d912d4a374459d
 <packaging>war</packaging>
 <name>devopscasestudy</name>
 <description>Demo project for Spring Boot</description>
