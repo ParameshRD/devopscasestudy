@@ -1,0 +1,4 @@
+FROM alpine-java8
+LABEL maintainer="parameshrdgowd97@gmail.com"
+COPY /target/devopscasestudy-0.3.0-SNAPSHOT.war /home/devopscasestudy-0.3.0-SNAPSHOT.war
+CMD ["java","-jar","devopscasestudy-0.3.0-SNAPSHOT.war"]
